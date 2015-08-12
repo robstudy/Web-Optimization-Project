@@ -487,15 +487,16 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 
-//NOTE: optimizing by adding array with all elements with mover class name
+//STUDENT NOTE: optimizing by adding array with all elements with mover class name
 var moverArray = [];
 
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+  //STUDENT NOTE: Moved scrollTop outside the for loop to note 
+  var scrollLen = document.body.scrollTop / 1250;
   for (var i = 0; i < moverArray.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin(scrollLen + (i % 5));
     moverArray[i].style.left = moverArray[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -516,7 +517,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  //8 pizzas per row, only 4 show at a time, 32 pizzas needed.
+  //STUDENT NOTE: 8 pizzas per row, only 4 show at a time, 32 pizzas needed.
   for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
@@ -526,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
-    moverArray.push(elem);//placing each element in moverArray
+    moverArray.push(elem);//STUDENT NOTE: placing each element in moverArray
   }
   updatePositions();
 });
