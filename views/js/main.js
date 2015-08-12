@@ -495,8 +495,9 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
   //STUDENT NOTE: Moved scrollTop outside the for loop to note 
   var scrollLen = document.body.scrollTop / 1250;
+  var phase;
   for (var i = 0; i < moverArray.length; i++) {
-    var phase = Math.sin(scrollLen + (i % 5));
+    phase = Math.sin(scrollLen + (i % 5));
     moverArray[i].style.left = moverArray[i].basicLeft + 100 * phase + 'px';
   }
 
