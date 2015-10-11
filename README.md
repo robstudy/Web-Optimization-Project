@@ -1,6 +1,6 @@
 Original repository for site https://github.com/udacity/frontend-nanodegree-mobile-portfolio
 
-To run the application you all you need do is open index.html and navigate through the pages.
+To run the application you all you need do is visit http://robstudy.github.io/Web-Optimization-Project/ and navigate through the pages. You can run the hosted pages through google pagespeed insight tool at https://developers.google.com/speed/pagespeed/insights/
 
 Optimizations:
 
